@@ -14,10 +14,22 @@ Every reboot resets the computer to a clean state, while still allowing games an
 
 ---
 
-## SAMPLE
+## TURN WINDOWS FEATURES ON or OFF
+![Alt text](./assets/win_feature.png)
+
+
+## AFTER ENABLE/TURN ON
+You can test the config
 ```powershell
 uwfmgr get-config
+uwfmgr help
 
+uwfmgr filter help
+uwfmgr file help
+uwfmgr volume help
+```
+
+```powershell
 # filter
 uwfmgr filter enable
 uwfmgr filter disable
