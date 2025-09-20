@@ -8,14 +8,18 @@ The configuration allows games and browsers to update while ensuring customer da
 ## Enable UWF
 
 ```powershell
-Write-Host "=== Enabling Unified Write Filter (UWF) ==="
+# Write-Host "=== Enabling Unified Write Filter (UWF) ==="
 uwfmgr filter enable
 ```
 
-## Reset Old Exclusions (Optional)
+## Protect Volume
+
 ```powershell
-Write-Host "=== Resetting old exclusions (clean start) ==="
-uwfmgr file reset
+# Write-Host "=== Protect Volume ==="
+uwfmgr volume protect <volume-name>
+uwfmgr volume protect C:
+uwfmgr volume protect D:
+uwfmgr volume protect E:
 ```
 
 ## Game & App Exclusions
@@ -24,8 +28,11 @@ uwfmgr file reset
 uwfmgr file add-exclusion "C:\Games"
 
 # Roblox game client (keeps updates, but NOT login credentials)
-uwfmgr file add-exclusion "C:\Program Files (x86)\Roblox"
+wfmgr file add-exclusion "C:\Program Files (x86)\Roblox"
 uwfmgr file add-exclusion "C:\Users\Public\Roblox"
+uwfmgr file add-exclusion "C:\Users\$env:USERNAME\AppData\Local\Roblox"
+uwfmgr file remove-exclusion "C:\Users\$env:USERNAME\AppData\Local\Roblox\LocalStorage\RobloxCookies.dat"
+
 
 # Steam
 uwfmgr file add-exclusion "C:\Program Files (x86)\Steam"

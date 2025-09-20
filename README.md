@@ -14,22 +14,42 @@ Every reboot resets the computer to a clean state, while still allowing games an
 
 ---
 
+## SAMPLE
+```powershell
+uwfmgr get-config
+
+# filter
+uwfmgr filter enable
+uwfmgr filter disable
+
+# file
+uwfmgr file add-exclusion <PATH> # Path file or directory
+uwfmgr file remove-exclusion <PATH> # Path file or directory
+
+# volume
+uwfmgr volume protect C: # protect volume C:
+uwfmgr volume unprotect C: # remove protection volume C:
+
+```
+
 📂 Exclusions
    The script excludes the following folders so updates are not lost:
 
    - C:\Games – custom game folder
 
-   - C:\Program Files (x86)\Roblox and C:\Users\Public\Roblox – Roblox client
+   - C:\Users\Hairyblue\AppData\Local\Roblox
+
+   - C:\Program Files (x86)\Roblox and C:\Users\Public\Roblox – Roblox client (optional)
 
    - C:\Program Files (x86)\Steam – Steam client
 
    - C:\Program Files\Epic Games – Epic Games launcher
 
    - C:\Riot Games – Riot Games (Valorant, League of Legends)
-
+   
    - C:\Program Files\Google\Chrome and C:\Program Files (x86)\Google\Chrome – Chrome updates
 
-   - C:\Program Files (x86)\Microsoft\Edge and C:\Program Files\Microsoft\Edge – Edge updates
+   - C:\Program Files\Microsoft\Edge and C:\Program Files (x86)\Microsoft\Edge and  – Edge updates
 
    - C:\Program Files\Mozilla Firefox – Firefox updates
 
@@ -42,6 +62,7 @@ For safety I recommend manually do paste the script from: .
 ```
 setup-uwf-pisonet.md
 ```
+
 OR
 
 Save the script as `setup-uwf-pisonet.ps1.`
@@ -69,15 +90,12 @@ This controls what kind of PowerShell scripts are allowed to run on your system.
 
 `Bypass`
 This tells PowerShell:
-
 “Ignore script blocking, run it anyway without warnings.”
 It’s temporary — does not change the permanent settings.
 
 `-Scope Process`
 This limits the change to the current PowerShell session only.
-
 Once you close the window, the execution policy goes back to normal.
-
 This avoids permanent security risks.
 
 `-Force`

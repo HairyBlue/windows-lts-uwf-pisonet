@@ -19,6 +19,8 @@ uwfmgr file add-exclusion "C:\Games"
 # Roblox game client (keeps updates, but NOT login credentials)
 uwfmgr file add-exclusion "C:\Program Files (x86)\Roblox"
 uwfmgr file add-exclusion "C:\Users\Public\Roblox"
+uwfmgr file add-exclusion "C:\Users\$env:USERNAME\AppData\Local\Roblox"
+uwfmgr file remove-exclusion "C:\Users\$env:USERNAME\AppData\Local\Roblox\RobloxCookies.dat"
 
 # Steam
 uwfmgr file add-exclusion "C:\Program Files (x86)\Steam"
