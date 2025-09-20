@@ -15,7 +15,7 @@ Every reboot resets the computer to a clean state, while still allowing games an
 ---
 
 ## TURN WINDOWS FEATURES ON or OFF
-Device Lockdown -> Unified Write Filter (✅)
+Device Lockdown -> Unified Write Filter (✅) \
 ![Alt text](./assets/win_feature.png)
 
 
